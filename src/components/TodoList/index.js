@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../../redux/actions';
 import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react';
-import { todoListSelector, searchTextSelector } from '../../redux/selectors';
+import { todosRemainingSelector } from '../../redux/selectors';
 
 export default function TodoList() {
   //Tạo state để lưu input user nhập vào
@@ -16,10 +16,10 @@ export default function TodoList() {
   //nhưng viết như vậy sau này mỗi lần sử dụng state.todoList lại phải viết lại
   //nên để tối ưu, nên viết thành function seletor-creator như action-cretor
   //Lấy state todoList trong store
-  const todoList = useSelector(todoListSelector)
+  const todoList = useSelector(todosRemainingSelector)
 
   //Lấy searchText trong filters của store
-  const searchText = useSelector(searchTextSelector)
+  // const searchText = useSelector(searchTextSelector)
 
   const dispatch = useDispatch()
 
